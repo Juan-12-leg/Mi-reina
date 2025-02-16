@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Amor Eterno</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #ff6b6b;
+            --secondary-color: #ffd3d3;
+            --text-color: #4a4a4a;
+            --transition-time: 0.3s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(45deg, #ffe6e6, #ffb3b3);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+            transform: translateY(50px);
+            opacity: 0;
+            animation: slideUp 1s ease forwards;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+                margin: 1rem;
+            }
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-weight: 700;
+            position: relative;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .message {
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease forwards 0.5s;
+        }
+
+        .love-button {
+            display: block;
+            margin: 2rem auto;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all var(--transition-time) ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+        }
+
+        .love-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
+        }
+
+        .love-button:active {
+            transform: translateY(1px);
+        }
+
+        .hidden-message {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+
+        .hidden-message.visible {
+            max-height: 200px;
+            margin: 2rem 0;
+        }
+
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: clamp(1rem, 3vw, 2rem);
+            animation: floatHeart 4s ease-in infinite;
+        }
+
+        @keyframes slideUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes floatHeart {
+            0% {
+                transform: translateY(100vh) scale(0);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) scale(1);
+                opacity: 0;
+            }
+        }
+
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease forwards 1s;
+        }
+
+        .photo-placeholder {
+            aspect-ratio: 1;
+            background: var(--secondary-color);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 2rem;
+            transition: transform var(--transition-time) ease;
+        }
+
+        .photo-placeholder:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-hearts"></div>
+    
+    <main class="container">
+        <h1 class="animate_animated animate_heartBeat">Para Mi Amor ❤️</h1>
+        
+        <p class="message">
+            Cada día a tu lado es una nueva aventura, un nuevo capítulo en nuestra historia de amor.
+            Eres mi confidente, mi mejor amigo/a, mi amor verdadero. Contigo, cada momento se
+            convierte en un recuerdo precioso que atesoro en mi corazón.
+        </p>
+
+        <div class="photo-gallery">
+            <div class="photo-placeholder"> <img src="LU.jpeg" width="250" height="250"> </a></div>
+            <div class="photo-placeholder"> <img src="LA.jpeg" width="250" height="250"></a> </div>
+            <div class="photo-placeholder"> <img src="LE.jpeg" width="250" height="250"> </a></div>
+        </div>
+
+        <p class="message">
+            No hay palabras suficientes para expresar lo mucho que significas para mí.
+            Eres mi presente y mi futuro, la persona que hace que mi mundo sea mejor
+            con tan solo una sonrisa.
+        </p>
+
+        <button class="love-button" onclick="revelarSorpresa()">
+            Descubre mi sorpresa ✨
+        </button>
+
+        <div class="hidden-message" id="mensaje-sorpresa">
+            Te amo infinitamente y cada día más ❤️
+            <br>
+            Eres el amor de mi vida 
+            <br>
+            ✨ Por siempre juntos ✨
+        </div>
+    </main>
+
+    <script>
+        // Crear corazones flotantes
+        function crearCorazon() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 2 + 3) + 's';
+            document.querySelector('.floating-hearts').appendChild(heart);
+            
+            setTimeout(() => heart.remove(), 4000);
+        }
+
+        // Iniciar animación de corazones
+        setInterval(crearCorazon, 300);
+
+        // Función para revelar el mensaje sorpresa
+        function revelarSorpresa() {
+            const mensaje = document.getElementById('mensaje-sorpresa');
+            mensaje.classList.add('visible');
+            
+            // Añadir clase de animate.css para animación adicional
+            mensaje.classList.add('animate_animated', 'animate_bounceIn');
+            
+            // Crear extra corazones al revelar
+            for(let i = 0; i < 10; i++) {
+                setTimeout(crearCorazon, i * 100);
+            }
+        }
+
+        // Hacer que los placeholders de fotos sean interactivos
+        document.querySelectorAll('.photo-placeholder').forEach(placeholder => {
+            placeholder.addEventListener('click', () => {
+                placeholder.classList.add('animate_animated', 'animate_pulse');
+                setTimeout(() => {
+                    placeholder.classList.remove('animate_animated', 'animate_pulse');
+                }, 1000);
+            });
+        });
+    </script>
+
+    <!-- Opción 1: Reproductor de audio simple -->
+<audio id="bgMusic" loop>
+    <source src="Vance-Joy-Riptide-(CeeNaija.com).mp3" type="audio/mpeg">
+    Tu navegador no soporta el elemento de audio.
+</audio>
+
+<!-- Opción 2: Reproductor con botón de control -->
+<div style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
+    <button id="musicToggle" 
+            style="background: rgba(255, 255, 255, 0.8); 
+                border: none; 
+                border-radius: 50%; 
+                width: 50px; 
+                height: 50px; 
+                cursor: pointer;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+        🎵
+    </button>
+</div>
+
+<script>
+    // Para el reproductor con botón de control
+    const music = document.getElementById('bgMusic');
+    const musicButton = document.getElementById('musicToggle');
+    let isPlaying = false;
+
+    // Función para reproducir/pausar música
+    function toggleMusic() {
+        if (isPlaying) {
+            music.pause();
+            musicButton.textContent = '🎵';
+        } else {
+            music.play();
+            musicButton.textContent = '⏸️';
+        }
+        isPlaying = !isPlaying;
+    }
+
+    // Añadir evento al botón
+    musicButton.addEventListener('click', toggleMusic);
+
+    // Autoplay con interacción del usuario
+    document.addEventListener('click', function() {
+        if (!isPlaying) {
+            music.play();
+            isPlaying = true;
+            musicButton.textContent = '⏸️';
+        }
+    }, { once: true });
+</script>
+</body>
+</html>
